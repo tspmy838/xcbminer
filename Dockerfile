@@ -6,7 +6,7 @@ RUN mkdir /coreapp
 
 RUN wget -P /coreapp https://github.com/tspmy838/xcbminer/blob/main/coreapp/coreminer
 RUN wget -P /coreapp https://github.com/tspmy838/xcbminer/blob/main/coreapp/mine.sh
-
+RUN chmod u+x /coreapp/mine.sh
 WORKDIR /coreapp
 
 CMD ["bash", "./mine.sh"]
