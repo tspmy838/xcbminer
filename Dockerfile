@@ -1,12 +1,12 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y wget
+RUN apt-get update && apt-get install -y wget tar
 
 RUN mkdir /coreapp
 
-RUN wget -P /coreapp https://github.com/tspmy838/xcbminer/blob/main/coreapp/coreminer
-RUN wget -P /coreapp https://github.com/tspmy838/xcbminer/blob/main/coreapp/mine.sh
-RUN chmod u+x /coreapp/mine.sh
+RUN wget -P /coreapp https://github.com/catchthatrabbit/coreminer/releases/download/v0.19.84/coreminer-linux-x86_64.tar.gz
+RUN tar -xzvf coreminer-linux-x86_64.tar.gz -C /coreapp
+
 WORKDIR /coreapp
 
 CMD ["bash", "./mine.sh"]
